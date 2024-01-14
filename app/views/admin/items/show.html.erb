@@ -1,13 +1,18 @@
-<p>商品詳細</p>
+<div class="p-3  bg-secondary text-white">
+<h2>商品詳細</h2>
+</div>
 
-<div>
+<br />
+
+<div class="text-center">
  <%= image_tag @item.get_item_image(100, 100) %>
   <p>商品名<%= @item.name %></p>
   <p>商品説明<%= @item.introduction %></p>
   <p>ジャンル<%= @item.genre_id %></p>
   <p>税込価格（税抜価格）<%= (@item.price*1.1).to_i %>(<%= @item.price %>)円</p>
   <p>販売ステータス<%= @item.is_active ? "販売中" : "販売停止中" %> </p>
-</div>
 
 <%= link_to "編集する", edit_admin_item_path, class: "btn btn-success" %>
+
+</div>
 

@@ -1,5 +1,6 @@
-<p>会員情報編集</p>
-
+<div class="p-3 mb-2 bg-secondary text-white">
+<h3>会員情報編集</h3>
+</div>
 
 <%= form_with model: @customer, url: '/customers', method: :patch do |f| %>
   <%#= render "public/shared/error_messages", resource: resource %>
@@ -36,10 +37,12 @@
    <%= f.text_field :email %>
  </div>
 
- <div class="actions">
+ <div class="text-center">
    <%= f.submit "編集内容を保存", class: "btn btn-success" %>
  </div>
 
+ <div class="text-center">
 <%= link_to "退会する", confirm_path, class: "btn btn-danger" %>
+ </div>
 
 <% end %>

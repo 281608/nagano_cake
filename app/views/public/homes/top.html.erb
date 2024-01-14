@@ -1,14 +1,23 @@
+<br />
+<p class="text-center">ようこそ、ながのCAKEへ！</p>
+<p class="text-center">このサイトは、ケーキ販売のECサイトになります。</p>
+<p class="text-center">会員でない方も商品の閲覧はできますが、
+                       購入には会員登録が必要になります。</p>
 
-<p>ようこそ、ながのCAKEへ！
-このサイトは、ケーキ販売のECサイトになります。
-会員でない方も商品の閲覧はできますが、
-購入には会員登録が必要になります。</p>
+<br />
+<h1 class="text-center">新着商品</h1>
 
-<h1>新着商品</h1>
-
+<br />
+<div class="container">
+ <div class="row">
+  <div class="d-flex justify-content-center">
 <% @items.each do |item| %>
+ <div class="col-2 text-center" style="margin-right: 20px">
 <%= image_tag item.get_item_image(100, 100) %>
  <%= link_to item.name, item_path(item.id) %>
- ￥<%= item.price.to_s(:delimited) %>
-
+ <p>￥<%= item.price.to_s(:delimited) %></p>
+ </div>
  <% end %>
+</div>
+ </div>
+ </div>

@@ -1,8 +1,19 @@
-<h3>商品一覧（全ｘ件）</h3>
-<% @items.each do |item| %>
- <%= image_tag item.get_item_image(100, 100) %>
- <%= link_to item.name, item_path(item.id) %>
- ￥<%= item.price.to_s(:delimited) %>
-<% end %>
+<br />
+<h3 class="text-center">商品一覧（全ｘ件）</h3>
+<br />
+<div class="container">
+ <div class="row">
+  <div class="d-flex justify-content-center">
+   <% @items.each do |item| %>
+    <div class="col-2 text-center" style="margin-right: 20px">
+     <%= image_tag item.get_item_image(100, 100) %>
+     <%= link_to item.name, item_path(item.id) %>
+     <p>￥<%= item.price.to_s(:delimited) %></p>
+    </div>
+   <% end %>
+  </div>
+ </div>
+</div>
+
 
 <%= paginate @items %>

@@ -1,4 +1,6 @@
+<div class="p-3 mb-2 bg-secondary text-white">
 <h2>新規登録</h2>
+</div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "public/shared/error_messages", resource: resource %>
@@ -60,6 +62,7 @@
   </div>
 <% end %>
 
+<br />
 <h2>既に登録済みの方</h2>
 <%= link_to "こちら", customer_session_path %>からログインしてください。
 

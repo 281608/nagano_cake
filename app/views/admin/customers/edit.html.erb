@@ -1,5 +1,8 @@
-<p><%= @customer.full_name %>さんの会員情報編集</p>
+<div class="p-3  bg-secondary text-white">
+<h2><%= @customer.full_name %>さんの会員情報編集</h2>
+</div>
 
+<br />
 <%= form_with model: @customer, url: admin_customer_path, method: :patch do |f| %>
 
 <p>会員id<%= @customer.id %></p>

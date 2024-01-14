@@ -32,9 +32,19 @@ class Public::OrdersController < ApplicationController
     @cart_items = current_customer.cart_items
     @shipping_address = ShippingAddress.find(params[:order][:address_id])
     @order.customer_id = @shipping_address.customer_id
-    @order.postal_code = @shipping_address.postal_code
-    @order.address = @shipping_address.address
-    @order.name = @shipping_address.name
+     if params[:order][:address_option] == "0"
+       @order.postal_code = current_customer.postal_code
+       @order.address = current_customer.address
+       @order.name = current_customer.full_name
+     elsif params[:order][:address_option] == "1"
+       @order.postal_code = @shipping_address.postal_code
+       @order.address = @shipping_address.address
+       @order.name = @shipping_address.name
+     elsif params[:order][:address_option] == "2"
+       @order.postal_code = params[:order][:postal_code]
+       @order.address = params[:order][:address]
+       @order.name = params[:order][:name]
+     end
     @order.postage = 800
     @cart_item_total = 0
     @order.billing_amount = 0

@@ -1,12 +1,16 @@
-<p>ジャンル一覧・追加</p>
+<div class="p-3  bg-secondary text-white">
+<h2>ジャンル一覧・追加</h2>
+</div>
 
-<p>ジャンル名</p>
+<br />
+<h3>ジャンル名</h3>
 <%= form_with model: @new_genre, url: admin_genres_path, method: :post do |f| %>
 <%= f.text_field :name %>
   <%= f.submit '新規登録' , class: "btn btn-success"%>
 <% end %>
 
-  <table>
+<br />
+  <table class="table">
     <tbody>
       <thead>
       <tr>
