@@ -6,12 +6,12 @@
 <div class="text-center">
 <%= form_with model: @item, url: admin_item_path, method: :patch do |f| %>
 
-<p>商品画像<%= f.file_field :image, accept: "image/*" %></p>
-<p>商品名<%= f.text_field :name %></p>
-<p>商品説明<%= f.text_area :introduction %></p>
-<p>ジャンル<%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name) %></p>
-<p>税抜価格<%= f.text_field :price %>円</p>
-<p>販売ステータス<%= f.radio_button :is_active, true %>販売中
+<p>商品画像<br /><%= f.file_field :image, accept: "image/*" %></p>
+<p>商品名<br /><%= f.text_field :name %></p>
+<p>商品説明<br /><%= f.text_area :introduction %></p>
+<p>ジャンル<br /><%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name) %></p>
+<p>税抜価格<br /><%= f.text_field :price %>円</p>
+<p>販売ステータス<br /><%= f.radio_button :is_active, true %>販売中
 <%= f.radio_button :is_active, false %>販売停止中</p>
 <%= f.submit "変更を保存", class: "btn btn-success" %>
 

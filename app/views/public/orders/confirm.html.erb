@@ -2,7 +2,7 @@
 <h2>注文情報確認</h2>
 </div>
 
-<table class="table">
+<table class="table table-bordered">
   <thead>
     <th></th>
     <th>商品名</th>
@@ -25,7 +25,7 @@
   </tbody>
 </table>
 
-<table class="table">
+<table class="table table-bordered">
   <thead>
     <th>送料</th>
     <th>商品合計</th>
@@ -46,8 +46,8 @@
 <%= @order.payment_method_i18n %>
 
 <h3>お届け先</h3>
-〒<%= @order.postal_code %>
-<%= @order.address %>
+〒<%= @order.postal_code %><br />
+<%= @order.address %><br />
 <%= @order.name %>
 
 <%= form_with model: @order, url: orders_path, method: :post do |f| %>
