@@ -14,16 +14,16 @@
    </tr>
   </thead>
   <tbody>
-   <% @order_details.each do |order_detail| %>
+   <% @order.each do |order| %>
    <tr>
     <td></td>
-    <td><%= link_to (l order_detail.created_at), admin_order_path(order_detail.id) %></td>
-    <td><%= order_detail.order.name %></td>
-    <td><%= order_detail.quantity %></td>
-    <td><%= order_detail.making_status_i18n %></td>
+    <td><%= link_to (l order.created_at), admin_order_path(order.id) %></td>
+    <td><%= order.name %></td>
+    <td><%= order.order_details.sum{|hash| hash[:quantity]} %></td>
+    <td><%= order.status_i18n %></td>
    </tr>
    <% end %>
   </tbody>
   </table>
 
-  <%= paginate @order_details %>
+  <%= paginate @order %>

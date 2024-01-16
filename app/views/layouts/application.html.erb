@@ -70,7 +70,7 @@
       </nav>
 
   <% if customer_signed_in? %>
-   <%= 'ようこそ'+ current_customer.first_name + 'さん' %>
+   <%= 'ようこそ'+ current_customer.full_name + 'さん' %>
    <% end %>
 
     </header>

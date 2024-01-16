@@ -8,7 +8,7 @@
  <%= image_tag @item.get_item_image(100, 100) %>
   <p>商品名<br /><%= @item.name %></p>
   <p>商品説明<br /><%= @item.introduction %></p>
-  <p>ジャンル<br /><%= @item.genre_id %></p>
+  <p>ジャンル<br /><%= @item.genre.name %></p>
   <p>税込価格（税抜価格）<br /><%= (@item.price*1.1).to_i %>(<%= @item.price %>)円</p>
   <p>販売ステータス<br /><%= @item.is_active ? "販売中" : "販売停止中" %> </p>
 

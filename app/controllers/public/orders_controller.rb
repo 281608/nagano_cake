@@ -24,6 +24,7 @@ class Public::OrdersController < ApplicationController
     @order_detail.price = cart_item.item.price
     @order_detail.making_status = 0
     @order_detail.save
+    cart_item.destroy
     end
     redirect_to orders_thanks_path
   end
