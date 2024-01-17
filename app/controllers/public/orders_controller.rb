@@ -1,4 +1,5 @@
 class Public::OrdersController < ApplicationController
+  before_action :order_new, only: [:new]
   def new
     @order = Order.new
     @customer = current_customer
@@ -53,6 +54,12 @@ class Public::OrdersController < ApplicationController
   end
 
   def thanks
+  end
+
+  def order_new
+    if current_customer.cart_items.empty?
+       redirect_to cart_items_path
+    end
   end
 
  private
