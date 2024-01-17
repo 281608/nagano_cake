@@ -6,6 +6,9 @@ class Admin::OrdersController < ApplicationController
   def update
     @order = Order.find(params[:id])
     @order.update(order_params)
+    if @order.status== "confirm_payment"
+      OrderDetail.update_all(making_status: "wait_making")
+    end
     redirect_to admin_order_path(@order)
   end
 

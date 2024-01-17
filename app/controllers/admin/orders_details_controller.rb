@@ -3,6 +3,9 @@ class Admin::OrdersDetailsController < ApplicationController
     @order_detail = OrderDetail.find(params[:id])
     @order = @order_detail.order
     @order_detail.update(order_detail_params)
+    if @order_detail.making_status== "making"
+       @order.update(status: "in_production")
+    end
     if change_status(@order)
       @order.update(status: "preparing_to_ship")
     end
